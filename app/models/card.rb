@@ -1,8 +1,5 @@
 class Card < ApplicationRecord
 
-  attr_reader :card_id, :card_title, :house, :card_type, :front_image, :card_text, :traits, :amber, :power, :armor, :rarity, :flavor_text, :card_number, :expansion, :is_maverick
-
-
   def new(args)
     @card_id = args["id"],
     @card_title = args["card_title"],

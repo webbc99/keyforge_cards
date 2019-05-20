@@ -1,9 +1,15 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
 
+  attr_accessor :card_id, :card_title, :house, :card_type, :front_image, :card_text, :traits, :amber, :power, :armor, :rarity, :flavor_text, :card_number, :expansion, :is_maverick
+
   # GET /cards
   # GET /cards.json
   def index
+    @cards = Card.where(is_maverick: false)
+  end
+
+  def full_card_list
     @cards = Card.all
   end
 
@@ -63,6 +69,7 @@ class CardsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    # TODO = implement a way to view a card by the name rather than the ID
     def set_card
       @card = Card.find(params[:id])
     end
