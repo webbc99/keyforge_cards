@@ -5,12 +5,16 @@ class CardsController < ApplicationController
 
   # GET /cards
   # GET /cards.json
-  def index
+  def standard_cards
     @cards = Card.where(is_maverick: false)
   end
+  
+  def all_mavericks
+    @cards = Card.where(is_maverick: true)
+  end
 
-  def full_card_list
-    @cards = Card.all
+  def index
+    @cards = Card.search(params[:search_term])
   end
 
   # GET /cards/1
@@ -76,6 +80,6 @@ class CardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
-      params.require(:card).permit(:card_id, :amber, :armor, :card_number, :card_text, :card_title, :card_type, :expansion, :flavor_text, :front_image, :house, :is_maverick, :power, :rarity, :traits)
+      params.require(:card).permit(:card_id, :amber, :armor, :card_number, :card_text, :card_title, :card_type, :expansion, :flavor_text, :front_image, :house, :is_maverick, :power, :rarity, :traits, :search_term)
     end
 end

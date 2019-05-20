@@ -18,4 +18,12 @@ class Card < ApplicationRecord
     @is_maverick = args["is_maverick"]
   end
 
+  def self.search(search_term)
+    if search_term
+      where("card_title LIKE ?", "%#{search_term}%").order('card_number ASC')
+    else
+      order('card_number ASC')
+    end
+  end
+  
 end
