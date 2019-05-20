@@ -1,0 +1,92 @@
+<%= form_with(model: card, local: true) do |form| %>
+  <% if card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+      <ul>
+      <% card.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.text_field :id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amber %>
+    <%= form.number_field :amber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :armor %>
+    <%= form.number_field :armor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :card_number %>
+    <%= form.number_field :card_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :card_text %>
+    <%= form.text_field :card_text %>
+  </div>
+
+  <div class="field">
+    <%= form.label :card_title %>
+    <%= form.text_field :card_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :card_type %>
+    <%= form.text_field :card_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expansion %>
+    <%= form.number_field :expansion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :flavor_text %>
+    <%= form.text_field :flavor_text %>
+  </div>
+
+  <div class="field">
+    <%= form.label :front_image %>
+    <%= form.text_field :front_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :house %>
+    <%= form.text_field :house %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_maverick %>
+    <%= form.check_box :is_maverick %>
+  </div>
+
+  <div class="field">
+    <%= form.label :power %>
+    <%= form.number_field :power %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rarity %>
+    <%= form.text_field :rarity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :traits %>
+    <%= form.text_field :traits %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: MyString
+  amber: 1
+  armor: 1
+  card_number: 1
+  card_text: MyString
+  card_title: MyString
+  card_type: MyString
+  expansion: 1
+  flavor_text: MyString
+  front_image: MyString
+  house: MyString
+  is_maverick: false
+  power: 1
+  rarity: MyString
+  traits: MyString
+
+two:
+  id: MyString
+  amber: 1
+  armor: 1
+  card_number: 1
+  card_text: MyString
+  card_title: MyString
+  card_type: MyString
+  expansion: 1
+  flavor_text: MyString
+  front_image: MyString
+  house: MyString
+  is_maverick: false
+  power: 1
+  rarity: MyString
+  traits: MyString

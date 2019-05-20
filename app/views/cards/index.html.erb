@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Amber</th>
+      <th>Armor</th>
+      <th>Card number</th>
+      <th>Card text</th>
+      <th>Card title</th>
+      <th>Card type</th>
+      <th>Expansion</th>
+      <th>Flavor text</th>
+      <th>Front image</th>
+      <th>House</th>
+      <th>Is maverick</th>
+      <th>Power</th>
+      <th>Rarity</th>
+      <th>Traits</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+        <td><%= card.id %></td>
+        <td><%= card.amber %></td>
+        <td><%= card.armor %></td>
+        <td><%= card.card_number %></td>
+        <td><%= card.card_text %></td>
+        <td><%= card.card_title %></td>
+        <td><%= card.card_type %></td>
+        <td><%= card.expansion %></td>
+        <td><%= card.flavor_text %></td>
+        <td><%= card.front_image %></td>
+        <td><%= card.house %></td>
+        <td><%= card.is_maverick %></td>
+        <td><%= card.power %></td>
+        <td><%= card.rarity %></td>
+        <td><%= card.traits %></td>
+        <td><%= link_to 'Show', card %></td>
+        <td><%= link_to 'Edit', edit_card_path(card) %></td>
+        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Card', new_card_path %>
