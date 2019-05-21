@@ -44,7 +44,7 @@ task :check_for_maverick_cards => :environment do
       end
     end
 
-    puts "#{page_number}/#{page_limit} - Cards: #{Card.all}"
+    puts "#{page_number}/#{page_limit} - Cards: #{Card.all.length}"
     page_number = (page_number + 1)
   end
 end
